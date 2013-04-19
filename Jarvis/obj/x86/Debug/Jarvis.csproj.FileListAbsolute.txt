@@ -1,0 +1,3 @@
+F:\Documents\Visual Studio 2012\Projects\Jarvis\Jarvis\bin\x86\Debug\Jarvis.exe.config
+F:\Documents\Visual Studio 2012\Projects\Jarvis\Jarvis\obj\x86\Debug\Interop.SpeechLib.dll
+F:\Documents\Visual Studio 2012\Projects\Jarvis\Jarvis\obj\x86\Debug\Jarvis.csproj.ResolveComReference.cache

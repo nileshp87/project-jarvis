@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE grammar PUBLIC "-//W3C//DTD GRAMMAR 1.0//EN"
+                  "http://www.w3.org/TR/speech-grammar/grammar.dtd">
+<grammar xmlns="http://www.w3.org/2001/06/grammar" xml:lang="en"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://www.w3.org/2001/06/grammar 
+                             http://www.w3.org/TR/speech-grammar/grammar.xsd"
+		tag-format="semantics/1.0-literals"
+         version="1.0" 
+         mode="voice" 
+         root="myroot">
+
+
+<rule id="myroot" scope="public">
+	<one-of>
+		<item> <ruleref uri="#playcommand"/> </item>
+		<item> <ruleref uri="#pausecommand"/> </item>
+		<item> <ruleref uri="#nextcommand"/> </item>
+		<item> <ruleref uri="#previouscommand"/> </item>
+		<item> <ruleref uri="#mutecommand"/> </item>
+		<item> <ruleref uri="#loudercommand"/> </item>
+		<item> <ruleref uri="#quietercommand"/> </item>
+		<item> <ruleref uri="#testcommand"/> </item>
+		<item> <ruleref uri="#hellocommand"/> </item>
+		<item> <ruleref uri="#goodbyecommand"/> </item>
+		<item> <ruleref uri="#alarmcommand"/> </item>
+	</one-of>
+</rule>
+
+<rule id="hellocommand">
+	<item>hello</item>
+</rule>
+
+<rule id="goodbyecommand">
+	<item>goodbye</item>
+</rule>
+
+<rule id="testcommand">
+	<item>reload</item>
+</rule>
+
+<rule id="playcommand">
+  <ruleref uri="#play"/>
+  <ruleref uri="#song"/>
+  <tag>play</tag>
+</rule>
+
+<rule id="pausecommand">
+  <ruleref uri="#pause"/>
+  <ruleref uri="#song"/>
+  <tag>pause</tag>
+</rule>
+
+<rule id="nextcommand">
+  <ruleref uri="#next"/>
+  <ruleref uri="#song"/>
+  <tag>next</tag>
+</rule>
+
+<rule id="previouscommand">
+  <ruleref uri="#previous"/>
+  <ruleref uri="#song"/>
+  <tag>previous</tag>
+</rule>
+
+<rule id="mutecommand">
+	<one-of>
+		<item>mute</item>
+		<item>ummute</item>
+	</one-of>
+	<tag>mute</tag>
+</rule>
+
+<rule id="alarmcommand">
+	<ruleref uri="#wakeme"/>
+	<ruleref uri="#hourtime"/>
+	<ruleref uri="#minutetime"/>
+	<ruleref uri="#ampm"/>
+</rule>
+
+<rule id="loudercommand">
+	<one-of>
+		<item>louder</item>
+		<item>volume up</item>
+		<item>increase volume</item>
+	</one-of>
+</rule>
+
+<rule id="quietercommand">
+	<one-of>
+		<item>quieter</item>
+		<item>volume down</item>
+		<item>decrease volume</item>
+	</one-of>
+</rule>
+
+
+<rule id="play">
+    <one-of>
+		<item>play</item>
+		<item>resume</item>
+    </one-of>
+</rule>
+
+<rule id="next">
+	<one-of>
+		<item>next</item>
+		<item>skip</item>
+	</one-of>
+</rule>
+
+<rule id="previous">
+	<one-of>
+		<item>previous</item>
+		<item>back</item>
+	</one-of>
+</rule>
+
+<rule id="pause">
+	<one-of>
+		<item>stop</item>
+		<item>pause</item>
+	</one-of>
+</rule>
+
+<rule id="song">
+	<one-of>
+		<item>music</item>
+		<item>track</item>
+		<item>song</item>
+		<item> </item>
+	</one-of>
+</rule>
+
+<rule id="wakeme">
+	<one-of>
+		<item>wake me at</item>
+		<item>wake me up at</item>
+		<item>set alarm for</item>
+		<item>wake up for</item>
+		<item>wake me up in time for</item>
+	</one-of>
+	<tag>out="alarm";</tag>
+</rule>
+<rule id="hourtime">
+	<one-of>
+		<item>one<tag>out = out + "1";</tag></item>
+		<item>two<tag>out = out + "2";</tag></item>
+		<item>three<tag>out = out + "3";</tag></item>
+		<item>four<tag>out = out + "4";</tag></item>
+		<item>five<tag>out = out + "5";</tag></item>
+		<item>six<tag>out = out + "6";</tag></item>
+		<item>seven<tag>out = out + "7";</tag></item>
+		<item>eight<tag>out = out + "8";</tag></item>
+		<item>nine<tag>out = out + "9";</tag></item>
+		<item>ten<tag>out = out + "10";</tag></item>
+		<item>eleven<tag>out = out + "11";</tag></item>
+		<item>twelve<tag>out = out + "12";</tag></item>		
+	</one-of>
+</rule>
+<rule id="minutetime">
+	<one-of>
+		<item>oh clock<tag>out = out + ":00";</tag></item>
+		<item>fifteen<tag>out = out + ":15";</tag></item>
+		<item>thirty<tag>out = out + ":30";</tag></item>
+		<item>fourty five<tag>out = out + ":45";</tag></item>
+		<item>a m<tag>out = out + ":00 AM";</tag></item>
+		<item>p m<tag>out = out + ":00 PM";</tag></item>
+		<item><tag>out = out + ":00";</tag></item>
+	</one-of>
+</rule>
+<rule id="ampm">
+	<one-of>
+		<item>a m<tag>out = out + "AM";</tag></item>
+		<item>p m<tag>out = out + "PM";</tag></item>
+		<item></item>
+	</one-of>
+</rule>
+
+</grammar>

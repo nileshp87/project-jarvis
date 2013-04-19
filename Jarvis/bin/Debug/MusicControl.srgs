@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE grammar PUBLIC "-//W3C//DTD GRAMMAR 1.0//EN"
+                  "http://www.w3.org/TR/speech-grammar/grammar.dtd">
+<grammar xmlns="http://www.w3.org/2001/06/grammar" xml:lang="en"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://www.w3.org/2001/06/grammar 
+                             http://www.w3.org/TR/speech-grammar/grammar.xsd"
+		tag-format="semantics/1.0-literals"
+         version="1.0" 
+         mode="voice" 
+         root="myroot">
+
+
+<rule id="myroot" scope="public">
+	<one-of>
+		<item> <ruleref uri="#playcommand"/> </item>
+		<item> <ruleref uri="#pausecommand"/> </item>
+		<item> <ruleref uri="#nextcommand"/> </item>
+		<item> <ruleref uri="#previouscommand"/> </item>
+		<item> <ruleref uri="#mutecommand"/> </item>
+		<item> <ruleref uri="#loudercommand"/> </item>
+		<item> <ruleref uri="#quietercommand"/> </item>
+	</one-of>
+</rule>
+	<rule id="playcommand">
+	  <ruleref uri="#play"/>
+	  <ruleref uri="#song"/>
+	  <tag>MusicControl play</tag>
+	</rule>
+
+	<rule id="pausecommand">
+	  <ruleref uri="#pause"/>
+	  <ruleref uri="#song"/>
+	  <tag>MusicControl pause</tag>
+	</rule>
+
+	<rule id="nextcommand">
+	  <ruleref uri="#next"/>
+	  <ruleref uri="#song"/>
+	  <tag>MusicControl next</tag>
+	</rule>
+
+	<rule id="previouscommand">
+	  <ruleref uri="#previous"/>
+	  <ruleref uri="#song"/>
+	  <tag>MusicControl previous</tag>
+	</rule>
+
+	<rule id="mutecommand">
+		<one-of>
+			<item>mute</item>
+			<item>ummute</item>
+		</one-of>
+		<tag>MusicControl mute</tag>
+	</rule>
+	
+	<rule id="loudercommand">
+		<one-of>
+			<item>louder</item>
+			<item>volume up</item>
+			<item>increase volume</item>
+		</one-of>
+		<tag>MusicControl louder</tag>
+	</rule>
+
+	<rule id="quietercommand">
+		<one-of>
+			<item>quieter</item>
+			<item>volume down</item>
+			<item>decrease volume</item>
+		</one-of>
+		<tag>MusicControl quieter</tag>
+	</rule>
+
+
+	<rule id="play">
+		<one-of>
+			<item>play</item>
+			<item>resume</item>
+		</one-of>
+	</rule>
+
+	<rule id="next">
+		<one-of>
+			<item>next</item>
+			<item>skip</item>
+		</one-of>
+	</rule>
+
+	<rule id="previous">
+		<one-of>
+			<item>previous</item>
+			<item>back</item>
+		</one-of>
+	</rule>
+
+	<rule id="pause">
+		<one-of>
+			<item>stop</item>
+			<item>pause</item>
+		</one-of>
+	</rule>
+
+	<rule id="song">
+		<one-of>
+			<item>music</item>
+			<item>track</item>
+			<item>song</item>
+			<item> </item>
+		</one-of>
+	</rule>
+</grammar>
