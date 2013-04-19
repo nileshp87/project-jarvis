@@ -11,9 +11,9 @@
   </media>
   <google>
     <usegooglevoice value="true" />
-    <googleemail value="nileshp88@gmail.com" />
-    <googlepassword value="#^(5al3m" />
-    <googleaddressbook value="C:\\Users\\niles_000\\Downloads\\google.csv" />
+    <googleemail value="username@gmail.com" />
+    <googlepassword value="password" />
+    <googleaddressbook value="C:\\path\\to\\contacts.csv" />
     <usegooglecalendar value="true" />
     <googlecalendaralerttime value="1" />
   </google>
