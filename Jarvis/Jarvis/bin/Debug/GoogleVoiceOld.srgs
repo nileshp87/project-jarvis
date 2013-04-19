@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://www.w3.org/2001/06/grammar" xml:lang="en"
+		tag-format="semantics/1.0"
+        version="1.0" 
+        root="myroot">
+
+
+<rule id="myroot" scope="public">
+	<one-of>
+		<item> <ruleref uri="#sendcommand"/> </item>
+		<item> <ruleref uri="#callcommand"/> </item>
+		<item> <ruleref uri="#replycommand"/> </item>
+	</one-of>
+</rule>
+	<rule id="sendcommand">
+
+		<item><ruleref uri="#send"/>
+		<tag>out="GoogleVoice send";</tag>
+		</item>
+		<item>
+		<ruleref uri="#name"/>
+		<tag>out=out+rules.latest();</tag>
+		</item>
+	</rule>
+
+	<rule id="callcommand">
+
+		<item><ruleref uri="#call"/>
+		<tag>out="GoogleVoice call";</tag>
+		</item>
+		<item>
+		<ruleref uri="#name"/>
+		<tag>out=out+rules.latest();</tag>
+		</item>
+	</rule>
+
+	<rule id="replycommand">
+	  <ruleref uri="#reply"/>
+	</rule>
+
+	<rule id="send">
+		<one-of>
+			<item>S M S</item>
+			<item>text</item>
+			<item>send a text to</item>
+		</one-of>
+
+	</rule>
+
+	<rule id="call">
+		<one-of>
+			<item>call</item>
+			<item>phone call</item>
+		</one-of>
+	</rule>
+
+	<rule id="reply">
+		<one-of>
+			<item>reply with</item>
+			<item>reply</item>
+			<item>reply to him</item>
+			<item>reply to her</item>
+		</one-of>
+		<tag>out="GoogleVoice reply";</tag>
+	</rule>
+	

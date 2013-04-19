@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<preferences>
+  <modules>
+    <updateinterval value="30" />
+  </modules>
+  <media>
+    <mediaplayerprocess value="foobar2000" />
+    <doestoggle value="true" />
+    <initialvolume value="30" />
+  </media>
+  <google>
+    <usegooglevoice value="true" />
+    <googleemail value="nileshp88@gmail.com" />
+    <googlepassword value="#^(5al3m" />
+    <googleaddressbook value="C:\\Users\\niles_000\\Downloads\\google.csv" />
+    <usegooglecalendar value="true" />
+    <googlecalendaralerttime value="1" />
+  </google>
+  <facebook>
+    <facebookrssfeed value="https://www.facebook.com/feeds/notifications.php?id=100000384732096&amp;viewer=100000384732096&amp;key=AWje-wDz15rVPSFh&amp;format=rss20" />
+  </facebook>
+  <testing>
+    <debug value="true"/>
+  </testing>
+</preferences>
