@@ -18,7 +18,7 @@
     <googlecalendaralerttime value="1" />
   </google>
   <facebook>
-    <facebookrssfeed value="https://www.facebook.com/feeds/notifications.php?id=100000384732096&amp;viewer=100000384732096&amp;key=AWje-wDz15rVPSFh&amp;format=rss20" />
+    <facebookrssfeed value="facebook_rss_feed" />
   </facebook>
   <testing>
     <debug value="true"/>
